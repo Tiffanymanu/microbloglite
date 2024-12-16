@@ -1,59 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Global CSS (CSS rules you want applied to all pages) -->
-    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="global.css" />
 
     <!-- Page-specific CSS -->
-    <link rel="stylesheet" href="landing.css">
+    <link rel="stylesheet" href="landing.css" />
 
     <title>Login to the Microblog Network!</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="./auth.js"></script>
     <script>
-        // If the user IS logged in, redirect to posts.html
-        if (isLoggedIn() === true) window.location.replace("posts.html");
+      // If the user IS logged in, redirect to posts.html
+      if (isLoggedIn() === true) window.location.replace("posts.html");
     </script>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <h1>Welcome to <code>YOUR MICROBLOG NETWORK</code></h1>
+      <h1> Hubbly </h1> 
+      
     </header>
 
     <main>
+      <!-- <form id="login">
+        <div>
+          <label for="username">Username</label>
+          <input type="text" id="username" minlength="3" />
+        </div>
 
-        <form id="login">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" id="username" minlength="3">
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" minlength="6" />
+        </div>
+
+        <button id="loginButton" type="submit">Login</button>
+      </form> -->
+      
+      <div class="container d-flex justify-content-between min-vh-100">
+        <div id="imagePlacement" class="w-100"></div>
+        <div class="w-100 d-flex justify-content-center align-items-center border-5">
+        
+          <form id="login" class="border border-primary-subtle p-4 rounded-5" >
+            <div class="text-center">
+              <img src="./images/logoipsum-212.svg" class="mb-2" alt="" />
             </div>
-
-            <div>
-                <label for="password">Password</label>
-                <input type="password" id="password" minlength="6">
+            <div class="form-group mb-3">
+              <h2 class="text-center">Log In</h2>
+              <label for="username">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                id="username"
+                aria-describedby="username"
+                placeholder="Username"
+                minlength="4"
+                required
+              />
             </div>
-
-            <button id="loginButton" type="submit">Login</button>
-        </form>
-
+            <div class="form-group mb-3">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="password"
+                placeholder="Password"
+                minlength="4"
+                required
+              />
+              <!-- <i class="bi bi-eye-slash align p-2 mt-2" id="hide-show" onclick="togglePassword()">Show Password</i> -->
+              <button class="btn" onclick="togglePassword()">
+                <i id="passwordLabel" class="bi bi-eye-slash align p-2 mt-2 hide-show1">Show Password</i>
+              </button>
+              <!-- <p id="passwordLabel" style="display: inline;">Show Password</p> -->
+              <small id="passwordToggle" class="text-muted"> Must be 8-20 characters long. </small>
+            </div>
+ 
+            <hr />
+ 
+            <button type="submit" id="loginButton" class="btn btn-primary rounded-5 mt-2 w-100">Log In</button>
+            <hr class="" />
+ 
+            <div class="d-flex justify-content-center buttonFlip gap-2">
+              <div class="">
+                <button class="btn btn-primary rounded-5 w-100">
+                  <i class="bi bi-google pe-1"></i>
+                  Log In with Google
+                </button>
+              </div>
+ 
+              <div class="">
+                <button class="btn btn-danger rounded-5 w-100">
+                  <i class="bi bi-apple pe-1"></i>
+                  Log In with Apple ID
+                </button>
+              </div>
+            </div>
+ 
+            <div class="my-2 text-center">
+              <small>Don't have an account with us? <a href="signup.html">Sign Up</a></small>
+            </div>
+          </form>
+        </div>
+ 
+        <!-- <div id="imagePlacement" class="w-100"></div> -->
+      </div>
+ 
     </main>
 
     <footer></footer>
 
     <!-- Page-specific code -->
     <script src="landing.js"></script>
-</body>
+  </body>
 </html>
