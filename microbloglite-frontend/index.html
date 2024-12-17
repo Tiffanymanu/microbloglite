@@ -24,7 +24,7 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="landing.css" />
 
-    <title>Login to the Microblog Network!</title>
+    <title>Login</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload - don't add the `defer` attribute): -->
     <script src="./auth.js"></script>
@@ -35,8 +35,7 @@
   </head>
   <body>
     <header>
-      <h1> Hubbly </h1> 
-      
+      <h1></h1>
     </header>
 
     <main>
@@ -53,12 +52,44 @@
 
         <button id="loginButton" type="submit">Login</button>
       </form> -->
-      
+
+      <nav
+        class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark ticky-top bg-body-tertiary"
+        data-bs-theme="dark"
+      >
+        <div class="container">
+          <a class="navbar-brand fw-light" href="/"><span class="fas fa-brain me-1"> </span>Ideas</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">Profile</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
       <div class="container d-flex justify-content-between min-vh-100">
         <div id="imagePlacement" class="w-100"></div>
         <div class="w-100 d-flex justify-content-center align-items-center border-5">
-        
-          <form id="login" class="border border-primary-subtle p-4 rounded-5" >
+          <form id="login" class="border border-primary-subtle p-4 rounded-5">
             <div class="text-center">
               <img src="./images/logoipsum-212.svg" class="mb-2" alt="" />
             </div>
@@ -77,14 +108,7 @@
             </div>
             <div class="form-group mb-3">
               <label for="password">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="password"
-                placeholder="Password"
-                minlength="4"
-                required
-              />
+              <input type="password" class="form-control" id="password" placeholder="Password" minlength="4" required />
               <!-- <i class="bi bi-eye-slash align p-2 mt-2" id="hide-show" onclick="togglePassword()">Show Password</i> -->
               <button class="btn" onclick="togglePassword()">
                 <i id="passwordLabel" class="bi bi-eye-slash align p-2 mt-2 hide-show1">Show Password</i>
@@ -92,42 +116,46 @@
               <!-- <p id="passwordLabel" style="display: inline;">Show Password</p> -->
               <small id="passwordToggle" class="text-muted"> Must be 8-20 characters long. </small>
             </div>
- 
+
             <hr />
- 
+
             <button type="submit" id="loginButton" class="btn btn-primary rounded-5 mt-2 w-100">Log In</button>
             <hr class="" />
- 
+
             <div class="d-flex justify-content-center buttonFlip gap-2">
               <div class="">
-                <button class="btn btn-primary rounded-5 w-100">
+                <button class="btn btn-danger rounded-5 w-100">
                   <i class="bi bi-google pe-1"></i>
                   Log In with Google
                 </button>
               </div>
- 
+
               <div class="">
-                <button class="btn btn-danger rounded-5 w-100">
+                <button class="btn btn-success rounded-5 w-100">
                   <i class="bi bi-apple pe-1"></i>
                   Log In with Apple ID
                 </button>
               </div>
             </div>
- 
+
             <div class="my-2 text-center">
               <small>Don't have an account with us? <a href="signup.html">Sign Up</a></small>
             </div>
           </form>
         </div>
- 
+
         <!-- <div id="imagePlacement" class="w-100"></div> -->
       </div>
- 
+
+      <footer></footer>
+      <!-- 
+    Page-specific code -->
+      <script src="landing.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"
+      ></script>
     </main>
-
-    <footer></footer>
-
-    <!-- Page-specific code -->
-    <script src="landing.js"></script>
   </body>
 </html>
