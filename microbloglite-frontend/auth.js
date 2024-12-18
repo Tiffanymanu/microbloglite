@@ -82,7 +82,7 @@ function logout () {
         },
     };
 
-    fetch(apiBaseURL + "/auth/logout", options)
+    return fetch(apiBaseURL + "/auth/logout", options)
         .then(response => response.json())
         .then(data => console.log(data))
         .finally(() => {
@@ -91,6 +91,19 @@ function logout () {
             // error with the fetch request above.
 
             window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect back to landing page (index.html)
+            window.location.assign("index.html");  // redirect back to landing page (index.html)
         });
 }
+
+const logoutButton = document.querySelector("#logout");
+document.addEventListener("DOMContentLoaded", function() {
+   document.body.addEventListener("click", function(event) {
+    console.log('sjwbjwbd')
+    console.log(event.target, event.target.id)
+       if (event.target && event.target.id === "logout") {
+        console.log('click event')
+           event.preventDefault()
+           logout()
+       }
+   })
+})
