@@ -95,15 +95,15 @@ function logout () {
         });
 }
 
-const logoutButton = document.querySelector("#logout");
-document.addEventListener("DOMContentLoaded", function() {
-   document.body.addEventListener("click", function(event) {
-    console.log('sjwbjwbd')
-    console.log(event.target, event.target.id)
-       if (event.target && event.target.id === "logout") {
-        console.log('click event')
-           event.preventDefault()
-           logout()
-       }
-   })
-})
+// const logoutButton = document.querySelector("#logout");
+// document.addEventListener("DOMContentLoaded", function() {
+//    document.body.addEventListener("click", function(event) {
+//     console.log('sjwbjwbd')
+//     console.log(event.target, event.target.id)
+//        if (event.target && event.target.id === "logout") {
+//         console.log('click event')
+//            event.preventDefault()
+//            logout()
+//        }
+//    })
+// })
