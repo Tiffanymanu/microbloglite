@@ -24,3 +24,16 @@ async function createUser() {
     console.error("Error Message", error.message);
   }
 }
+
+
+
+
+
+
+// event listener to direct to login page after signing up
+const signupButton = document.getElementById("signupButton") 
+
+signupButton.addEventListener("click",function(){
+createUser();
+logout();
+})

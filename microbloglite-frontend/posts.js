@@ -14,6 +14,10 @@
 const paragraphText = document.getElementById("paragraphText");
 const postCardBody = document.getElementById("postCardBody");
 const cardsListDiv = document.getElementById("cardsListDiv");
+const viewProfile = document.getElementById("viewProfile")
+// const username = document.getElementById("username")
+// const fullName = document.getElementById("fullName")
+
 
 async function getAllPosts() {
   const loginData = getLoginData();
@@ -87,7 +91,7 @@ function makeCard(post) {
   const avatar = document.createElement("img");
   avatar.style.width = "50px";
   avatar.className = "me-2 avatar-sm rounded-circle";
-  avatar.src = `https://api.dicebear.com/6.x/fun-emoji/svg?seed=${post.username}`;
+  avatar.src = `https://api.dicebear.com/9.x/glass/svg?seed=${post.username}`;
   avatar.alt = `${post.username} Avatar`;
 
   // User name
@@ -139,6 +143,8 @@ function makeCard(post) {
   dateText.innerHTML = `<span class="fas fa-clock"></span> ${formattedDate}`;
   dateContainer.appendChild(dateText);
 
+  viewProfile.href = `profile.html?username=${post.username}`
+
   actions.appendChild(likesContainer);
   actions.appendChild(dateContainer);
   cardBody.appendChild(actions);
@@ -159,6 +165,9 @@ function makeCard(post) {
   commentButton.textContent = "Post Comment";
   commentSection.appendChild(commentButton);
   cardBody.appendChild(commentSection);
+
+  
+  // }
 
   // Append body to card
   card.appendChild(cardBody);

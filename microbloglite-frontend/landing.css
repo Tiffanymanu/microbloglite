@@ -1,1 +1,29 @@
 /* Landing Page CSS */
+
+#imagePlacement{
+    /* background-color: #1a91da; */
+    background-image: url("./images/Black\ and\ Gray\ Film\ Collage\ Instagram\ Story.jpg");
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: changeBackground 8s 2s infinite ease-in-out;
+    }
+    
+    @keyframes changeBackground {
+    0%{
+    background-image: url("images/Brown\ and\ White\ Photocentric\ Scrapbook\ Food\ Instagram\ Story.jpg");
+    }33%{
+    background-image: url("./images/Beige\ Black\ Minimalist\ Collage\ Instagram\ Story.jpg");
+    }66%{
+    background-image: url("./images/Blue\ nd\ Brown\ Retro\ Cutouts\ Photo\ Dump\ Collage\ Instagram\ Story.jpg");
+    }100%{
+    background-image: url("./images/Untitled\ design.jpg");
+    }
+    } 
+
+
+    h2{
+     color: rgb(80, 56, 31) ;   
+    }
